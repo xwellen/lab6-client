@@ -4,9 +4,10 @@ package BaseClass;
 
 import Utils.IDGenerator;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SpaceMarine {
+public class SpaceMarine implements Serializable {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null

@@ -3,6 +3,8 @@ package Command.ConcreteCommand;
 import Command.Command;
 import Command.CommandReceiver;
 
+import java.io.IOException;
+
 public class CountGreaterThanWeaponType extends Command {
     private static final long serialVersionUID = 32L;
     transient private CommandReceiver commandReceiver;
@@ -15,7 +17,7 @@ public class CountGreaterThanWeaponType extends Command {
 
 
     @Override
-    protected void execute(String[] args) {
+    protected void execute(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
         if (args.length == 2) { commandReceiver.count_greater_than_weapon_type(args[1]); }
         else { System.out.println("Некорректное количество аргументов. Для справки напишите help."); }
     }

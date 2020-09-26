@@ -128,20 +128,34 @@ public class CommandReceiver {
         Receiver.receive(socketChannel);
     }
 
-    public void add_if_min(){
-        System.out.println("me do donting right now...");
+    public void add_if_min() throws IOException, InterruptedException, ClassNotFoundException {
+        sender.sendObject(new SerializedObjectCommand(new AddIfMin(), elementCreator.createSpaceMarine()));
+        Thread.sleep(delay);
+        Receiver.receive(socketChannel);
     }
-    public void average_of_health(){
-        System.out.println("me do donting right now...");
+
+    public void average_of_health() throws IOException, InterruptedException, ClassNotFoundException {
+        sender.sendObject(new SerializedSimplyCommand(new AverageOfHealth()));
+        Thread.sleep(delay);
+        Receiver.receive(socketChannel);
     }
-    public void count_greater_than_weapon_type(String arg){
-        System.out.println("me do donting right now...");
+
+    public void count_greater_than_weapon_type(String arg) throws IOException, InterruptedException, ClassNotFoundException {
+        sender.sendObject(new SerializedArgumentCommand(new CountGreaterThanWeaponType(), arg));
+        Thread.sleep(delay);
+        Receiver.receive(socketChannel);
     }
-    public void filter_by_health(String arg){
-        System.out.println("me do donting right now...");
+
+    public void filter_by_health(String arg) throws IOException, InterruptedException, ClassNotFoundException {
+        sender.sendObject(new SerializedArgumentCommand(new FilterByHealth(), arg));
+        Thread.sleep(delay);
+        Receiver.receive(socketChannel);;
     }
-    public void remove_first(){
-        System.out.println("me do donting right now...");
+
+    public void remove_first() throws IOException, InterruptedException, ClassNotFoundException {
+        sender.sendObject(new SerializedSimplyCommand(new RemoveFirst()));
+        Thread.sleep(delay);
+        Receiver.receive(socketChannel);
     }
 
 

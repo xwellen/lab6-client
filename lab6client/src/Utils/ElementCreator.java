@@ -16,11 +16,11 @@ public class ElementCreator {
         Long x = RefLongReader.read("Введите X: ", false, 878, "MAX");
         double y = PrimitiveDoubleReader.read("Введите Y: ", Long.MAX_VALUE, "MAX");
         long health = RefLongReader.read("Введите показатель здоровья: ", false, 0, "MIN");
-        AstartesCategory astartesCategory = AstartesCategoryReader.read("",true);
-        Weapon weapon = WeaponReader.read("",true);
+        AstartesCategory astartesCategory = AstartesCategoryReader.read("",false);
+        Weapon weapon = WeaponReader.read("",false);
         MeleeWeapon meleeWeapon = MeleeWeaponReader.read("", false);
-        String chapterName = StringReader.read("Введите название главы: ", true);
-        String chapterWorld = StringReader.read("Ввеите название мира:", true);
+        String chapterName = StringReader.read("Введите название главы: ", false);
+        String chapterWorld = StringReader.read("Ввеите название мира:", false);
 
         return new SpaceMarine(name, new Coordinates(x, y), health, astartesCategory, weapon, meleeWeapon, new Chapter(chapterName, chapterWorld));
     }

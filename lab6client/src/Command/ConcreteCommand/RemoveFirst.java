@@ -3,6 +3,8 @@ package Command.ConcreteCommand;
 import Command.Command;
 import Command.CommandReceiver;
 
+import java.io.IOException;
+
 
 public class RemoveFirst extends Command{
     private static final long serialVersionUID = 32L;
@@ -15,7 +17,7 @@ public class RemoveFirst extends Command{
     public RemoveFirst() {}
 
     @Override
-    protected void execute(String[] args) {
+    protected void execute(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
         if (args.length > 1) {
             System.out.println("Введен не нужный аргумент. Команда приведена к базовой команде remove_first.");
         }
